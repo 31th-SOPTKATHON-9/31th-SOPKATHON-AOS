@@ -81,3 +81,9 @@ imageview - iv
 1.<br>
     - view pager로 화면을 swipe 하는 것을 막음<br>
     - tab layout 대신 텍스트 하나 하나에 clicklistener를 적용해 화면이 tablayout이 적용돼 넘어가는거 처럼 구현함
+
+# 시연영상
+
+
+https://user-images.githubusercontent.com/77060011/202875980-87a11dbe-fa99-42fa-84be-2b3dfb210e78.mp4
+
