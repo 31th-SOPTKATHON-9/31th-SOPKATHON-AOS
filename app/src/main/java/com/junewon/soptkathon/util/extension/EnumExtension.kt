@@ -1,4 +1,4 @@
-package org.sopt.sample.util.extension
+package com.junewon.soptkathon.util.extension
 
 import timber.log.Timber
 
