@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:fontFamily="@font"
+        android:id="@+id/tv_home_habits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="도독질한 습관"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cv_home_habit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/habit_radius"
+        android:paddingVertical="27dp"
+        android:paddingStart="28dp"
+        android:text="습관1"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_habits" />
+
+    <CheckBox
+        android:id="@+id/cv_home_habit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/habit_radius"
+        android:paddingVertical="27dp"
+        android:paddingStart="28dp"
+        android:text="습관2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit1" />
+
+    <CheckBox
+        android:id="@+id/cv_home_habit3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/habit_radius"
+        android:paddingVertical="27dp"
+        android:paddingStart="28dp"
+        android:text="습관3"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit2" />
+
+    <TextView
+        android:id="@+id/tv_home_persontitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="63dp"
+        android:text="인물 정보"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit3" />
+
+    <TextView
+        android:backgroundTint="#D9FFD3"
+        android:id="@+id/tv_home_personinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/habit_radius"
+        android:paddingVertical="36dp"
+        android:paddingStart="28dp"
+        android:text="인물정보~"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_persontitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>
