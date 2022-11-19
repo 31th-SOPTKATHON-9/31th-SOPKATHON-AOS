@@ -1,4 +1,4 @@
-package org.sopt.sample.util.extension
+package com.junewon.soptkathon.util.extension
 
 /**
  * 변수 2가지 이상 null 체크할 때 사용

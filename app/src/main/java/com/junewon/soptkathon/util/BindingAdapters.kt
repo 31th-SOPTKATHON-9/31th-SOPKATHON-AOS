@@ -9,8 +9,8 @@ import com.junewon.soptkathon.R
 @BindingAdapter("app:circelImageUrl")
 fun ImageView.loadCircleImage(imageUrl: String?) {
     load(imageUrl) {
-        placeholder(R.drawable.ic_launcher_background)
-            .transformations(RoundedCornersTransformation(50f))
+        placeholder(R.color.green700)
+            .transformations(RoundedCornersTransformation(28f))
             .crossfade(true)
             .error(R.drawable.ic_launcher_background)
     }
