@@ -64,4 +64,7 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
         binding.rvProfile.adapter = adapter
         adapter.setBadgeList(mockBadgeList)
     }
+    private fun showBottomSheet() {
+        BadgeBottomSheetDialog().show(supportFragmentManager, "tag")
+    }
 }
