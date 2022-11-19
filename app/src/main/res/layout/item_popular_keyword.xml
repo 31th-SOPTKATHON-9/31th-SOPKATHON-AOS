@@ -4,11 +4,19 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_search_keyword"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="키워드"/>
+    android:text="키워드"
+    android:backgroundTint="@color/item_celeb_green"
+    android:insetTop="0dp"
+    android:insetBottom="0dp"
+    android:minHeight="0dp"
+    android:textColor="@color/black"
+    android:fontFamily="@font/pretendard_semi_bold"
+    android:layout_marginRight="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

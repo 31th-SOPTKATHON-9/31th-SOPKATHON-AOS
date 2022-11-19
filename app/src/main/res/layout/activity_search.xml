@@ -17,7 +17,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="36dp"/>
+            android:layout_marginTop="36dp"
+            app:queryHint="인물이나 습관 키워드를 검색해보세요." />
 
         <TextView
             android:id="@+id/tv_search_popular_keyword"
@@ -29,7 +30,8 @@
             app:layout_constraintTop_toBottomOf="@+id/sv_search_content"
             tools:ignore="HardcodedText,UnusedAttribute"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/celeb_title"/>
+            android:fontFamily="@font/celeb_title"
+            android:layout_marginHorizontal="15dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_search_popular_keyword"
@@ -40,7 +42,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_search_popular_keyword"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
-            tools:listitem="@layout/item_popular_keyword" />
+            tools:listitem="@layout/item_popular_keyword"
+            android:layout_marginHorizontal="15dp"/>
         <!--가로는 Manager를 선언할 때 LinearLayoutManager()를 사용하며, 가로형 리사이클러뷰를 만들고자 하면
         LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) 처럼 2, 3번 째의 파라미터를 주면 된다.-->
         <TextView
@@ -51,7 +54,8 @@
             app:layout_constraintTop_toBottomOf="@+id/rv_search_popular_keyword"
             android:text="이런 습관들을 훔쳐 보세요!"
             android:layout_marginTop="41dp"
-            android:fontFamily="@font/celeb_title"/>
+            android:fontFamily="@font/celeb_title"
+            android:layout_marginHorizontal="15dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_search_celeb"
@@ -60,7 +64,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_search_recommend"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
-            tools:listitem="@layout/item_celeb"/>
+            tools:listitem="@layout/item_celeb"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="18dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
