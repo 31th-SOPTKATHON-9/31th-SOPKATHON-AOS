@@ -5,27 +5,26 @@ import com.junewon.soptkathon.data.model.response.BaseResponse
 import com.junewon.soptkathon.data.model.response.ResponseSearchDTO
 import com.junewon.soptkathon.data.model.response.ResponseUserDTO
 import kotlinx.serialization.Serializable
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.Call
+import retrofit2.http.*
 
 interface SpangService {
 
     @GET("/habit/search")
     fun getSearch(
-        @Query("starName")search: String
-    ): BaseResponse<ResponseSearchDTO>
+        @Query("starName") search: String ="다카",
+        @Header("userId") userId: Int = 1
+    ): Call<BaseResponse<ResponseSearchDTO>>
 
     @GET("/home/day")
     fun getDays(
         @Query("filter")dayIdx: Int)
-    : BaseResponse<ResponseSearchDTO>
+    : Call<BaseResponse<ResponseSearchDTO>>
 
     @POST("/habit")
     fun postObserver(
         @Body userRequset: UserRequest
-    ): BaseResponse<ResponseUserDTO>
+    ): Call<BaseResponse<ResponseUserDTO>>
 }
 @Serializable
 data class User(

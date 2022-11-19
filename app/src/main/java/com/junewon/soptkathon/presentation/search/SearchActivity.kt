@@ -1,25 +1,30 @@
 package com.junewon.soptkathon.presentation.search
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.junewon.soptkathon.R
 import com.junewon.soptkathon.data.model.request.UserRequest
 import com.junewon.soptkathon.data.model.response.Habit
 import com.junewon.soptkathon.data.model.response.Star
 import com.junewon.soptkathon.data.service.SpangService
-import com.junewon.soptkathon.data.service.User
 import com.junewon.soptkathon.databinding.ActivitySearchBinding
+import com.junewon.soptkathon.presentation.home.HomeActivity
 import com.junewon.soptkathon.util.binding.BindingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.net.URL
+import retrofit2.await
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_search) {
     lateinit var keyWordAdapter: SearchKeywordAdapter
     lateinit var starAdapter: SearchStarAdapter
+
     @Inject
     lateinit var service: SpangService
     private val keyWordData = arrayListOf<KeyWordData>(
@@ -38,56 +43,60 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
     private val stars = listOf<Star>(
         Star(
             habits = listOf(
-                Habit(title = "운동 일지 쓰기"),Habit(title = "대체 운동 찾기"),Habit(title = "운동 감사 일기 쓰기")
+                Habit(title = "운동 일지 쓰기"), Habit(title = "대체 운동 찾기"), Habit(title = "운동 감사 일기 쓰기")
             ),
             starId = "1",
             title = "다카하시 사카에의 운동 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "매일 10분 걷기"),Habit(title = "과일, 채소 섭취하기"),Habit(title = "하루 최소 6시간 수면하기")
+                Habit(title = "매일 10분 걷기"), Habit(title = "과일, 채소 섭취하기"), Habit(title = "하루 최소 6시간 수면하기")
             ),
             starId = "2",
             title = "워렌 버핏의 돈 모으는 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "하루 우선 과제를 선정하기"),Habit(title = "아침에 한가지 일과 꼭 설정하고 지키기"),Habit(title = "요일별로 업무 주제 정하기")
+                Habit(title = "하루 우선 과제를 선정하기"), Habit(title = "아침에 한가지 일과 꼭 설정하고 지키기"), Habit(title = "요일별로 업무 주제 정하기")
             ),
             starId = "3",
             title = "케빈 크루즈의 갓생 사는 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "아침 4000원 이하로 먹기"),Habit(title = "취미 생활 1번 이상 하기"),Habit(title = "거울을 보고 나에게 중요한 질문하기")
+                Habit(title = "아침 4000원 이하로 먹기"), Habit(title = "취미 생활 1번 이상 하기"), Habit(title = "거울을 보고 나에게 중요한 질문하기")
             ),
             starId = "4",
             title = "워렌 버핏의 돈 모으는 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "외국 영화 자막 없이 20분 시청하기"),Habit(title = "영자 신문 하나 번역기 없이 읽기"),Habit(title = "영어 단어 하루에 20개 외우기")
+                Habit(title = "외국 영화 자막 없이 20분 시청하기"),
+                Habit(title = "영자 신문 하나 번역기 없이 읽기"),
+                Habit(title = "영어 단어 하루에 20개 외우기")
             ),
             starId = "5",
             title = "안현모의 언어 습득 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "두부나 오트밀 섭취하기"),Habit(title = "비건 식단에 대해 공부하고 한 끼 계획 짜기"),Habit(title = "한 끼 이상 비건 식단 섭취하기")
+                Habit(title = "두부나 오트밀 섭취하기"),
+                Habit(title = "비건 식단에 대해 공부하고 한 끼 계획 짜기"),
+                Habit(title = "한 끼 이상 비건 식단 섭취하기")
             ),
             starId = "6",
             title = "파멜라 퍼거슨의 건강한 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "나의 한계를 재단하지 않기"),Habit(title = "포기하고 싶을 때 한번 더 보기"),Habit(title = "포기하고 싶을 때 한번 더 보기")
+                Habit(title = "나의 한계를 재단하지 않기"), Habit(title = "포기하고 싶을 때 한번 더 보기"), Habit(title = "포기하고 싶을 때 한번 더 보기")
             ),
             starId = "7",
             title = "서동주의 만능 인재가 되는 습관"
         ),
         Star(
             habits = listOf(
-                Habit(title = "일주일에 책 한 권 이상 읽기"),Habit(title = "일주일에 책 한 권 이상 읽기"),Habit(title = "한 곳에 너무 집중하지 않기")
+                Habit(title = "일주일에 책 한 권 이상 읽기"), Habit(title = "일주일에 책 한 권 이상 읽기"), Habit(title = "한 곳에 너무 집중하지 않기")
             ),
             starId = "8",
             title = "오프라 윈프리의 성공하는 습관"
@@ -111,19 +120,27 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
         initKeyWorkAdapter()
         initStarAdapter()
         fetchStars()
-        initSearchClickListener()
+        initSearchCloseListener()
+
 
         binding.rvSearchCeleb.setOnClickListener {
-            service.postObserver(UserRequest("1"))
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
 
     }
 
-    private fun initSearchClickListener() {
-        binding.svSearchContent.setOnSearchClickListener {
-            fetchStars()
-        }
+    private fun initSearchCloseListener() {
+        binding.svSearchContent.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                fetchStars()
+                return true
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                return true
+            }
+        })
     }
 
     private fun initKeyWorkAdapter() {
@@ -137,16 +154,19 @@ class SearchActivity : BindingActivity<ActivitySearchBinding>(R.layout.activity_
     private fun initStarAdapter() {
         starAdapter = SearchStarAdapter(this)
         binding.rvSearchCeleb.adapter = starAdapter
-        starAdapter.setStars(false,starsImg,stars)
+        starAdapter.setStars(false, starsImg, stars)
     }
 
     private fun fetchStars() {
         lifecycleScope.launch {
             runCatching {
-                service.getSearch(binding.svSearchContent.query.toString())
+                service.getSearch(binding.svSearchContent.query.toString()).await()
             }.onSuccess {
-                starAdapter.setStars(true, starsImg,it.data.stars)
-            }.onFailure { }
+                Log.d("Nunu", "${it}")
+                starAdapter.setStars(true, starsImg, it.data.stars)
+            }.onFailure {
+                Log.d("Nunu", it.message.toString())
+            }
         }
     }
 }
