@@ -78,5 +78,6 @@ imageview - iv
 본래, tab layout과 viewpager를 연결해 tab layout을 통해서도 화면을 이동할 수 있고, viewpager의 swipe를 통해서도 화면을 이동할 수 있는 layout을 구성하려했으나 초반에 fragment 내에서 구현을 하지 않고 tab layout을 구현하지 않아 원하는 뷰를 구현할 수 없는 문제가 발생함
 
 # 해결방안
-- view pager로 화면을 swipe 하는 것을 막음
-- tab layout 대신 텍스트 하나 하나에 clicklistener를 적용해 화면이 tablayout이 적용되 넘어가는거 처럼 구현함
+1.
+    - view pager로 화면을 swipe 하는 것을 막음
+    - tab layout 대신 텍스트 하나 하나에 clicklistener를 적용해 화면이 tablayout이 적용되 넘어가는거 처럼 구현함
