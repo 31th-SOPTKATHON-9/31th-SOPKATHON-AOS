@@ -23,7 +23,7 @@
         android:fontFamily="@font/pretendard_bold"
         android:text="Unknown"
         android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_badge"
         app:layout_constraintStart_toStartOf="@+id/iv_badge"
         app:layout_constraintTop_toBottomOf="@+id/iv_badge" />
