@@ -15,4 +15,6 @@
     <color name="kyobo_white">#ffffff</color>
     <color name="kyobo_light_gray">#dadada</color>
     <color name="kyobo_blue">#2e5cff</color>
+    <!-- search -->
+    <color name="item_celeb_green">#E5FFD0</color>
 </resources>
