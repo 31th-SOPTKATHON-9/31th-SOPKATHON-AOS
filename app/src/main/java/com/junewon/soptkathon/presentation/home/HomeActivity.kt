@@ -5,7 +5,7 @@ import com.junewon.soptkathon.R
 import com.junewon.soptkathon.databinding.ActivityHomeBinding
 import com.junewon.soptkathon.presentation.profile.ProfileActivity
 import com.junewon.soptkathon.presentation.search.SearchActivity
-import com.junewon.soptkathon.util.binding.BindingActivityn.soptkathon.presentation.search.SearchActivity
+import com.junewon.soptkathon.util.binding.BindingActivity
 import com.junewon.soptkathon.util.extension.startActivity
 import dagger.hilt.android.AndroidEntryPoint
 
