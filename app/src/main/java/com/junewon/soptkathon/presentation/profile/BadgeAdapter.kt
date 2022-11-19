@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.junewon.soptkathon.databinding.ItemBadgeBinding
+import java.text.Bidi
 
 class BadgeAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
@@ -24,6 +25,7 @@ class BadgeAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHol
                 binding.ivBadge.setImageResource(data.image)
             }
             binding.tvBadge.text = data.name
+            binding.tvLevel.text = data.level
 
         }
     }
