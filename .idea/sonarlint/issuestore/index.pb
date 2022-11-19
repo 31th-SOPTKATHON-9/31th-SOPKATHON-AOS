@@ -44,10 +44,6 @@ p
 @app/src/main/java/com/junewon/soptkathon/util/TimberDebugTree.kt,0/d/0db6048e177397030d1a3627cd6536a04d7a5c9a
 =
 .editorconfig,6/2/626a747c8694eaae66f2afb3d1a745b045782c70
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 o
 ?app/src/main/java/com/junewon/soptkathon/di/SharedPrefModule.kt,a/6/a653725647af0666b1795e04c417ab857196745a
 ~

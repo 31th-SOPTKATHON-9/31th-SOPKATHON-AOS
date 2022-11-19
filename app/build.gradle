@@ -12,12 +12,12 @@ plugins {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.junewon.soptkathon"
         minSdk 26
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
         buildConfigField "String", "BASE_URL", properties["BASE_URL"]
@@ -83,7 +83,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // activity-ktx
-    implementation 'androidx.activity:activity-ktx:1.6.0'
+    implementation 'androidx.activity:activity-ktx:1.5.1'
     // fragment-ktx
     implementation "androidx.fragment:fragment-ktx:1.5.3"
     // ViewModel
