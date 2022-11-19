@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:fontFamily="@font"
         android:id="@+id/tv_home_habits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/radius"
+        android:background="@drawable/habit_radius"
         android:paddingVertical="27dp"
         android:paddingStart="28dp"
         android:text="습관1"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/radius"
+        android:background="@drawable/habit_radius"
         android:paddingVertical="27dp"
         android:paddingStart="28dp"
         android:text="습관2"
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/radius"
+        android:background="@drawable/habit_radius"
         android:paddingVertical="27dp"
         android:paddingStart="28dp"
         android:text="습관3"
@@ -71,12 +72,13 @@
         app:layout_constraintTop_toBottomOf="@+id/cv_home_habit3" />
 
     <TextView
+        android:backgroundTint="#D9FFD3"
         android:id="@+id/tv_home_personinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/radius"
+        android:background="@drawable/habit_radius"
         android:paddingVertical="36dp"
         android:paddingStart="28dp"
         android:text="인물정보~"
