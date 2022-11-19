@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/iv_badge"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:src="@drawable/ic_locked"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,10 +21,22 @@
         android:layout_height="wrap_content"
         android:text="Unknown"
         android:textSize="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@+id/iv_badge"
         app:layout_constraintStart_toStartOf="@+id/iv_badge"
         app:layout_constraintTop_toBottomOf="@+id/iv_badge" />
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lv.1"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_badge"
+        app:layout_constraintStart_toStartOf="@+id/iv_badge"
+        app:layout_constraintTop_toBottomOf="@id/tv_badge"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
