@@ -1,18 +1,17 @@
 package com.junewon.soptkathon.presentation.home
 
 import android.os.Bundle
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.junewon.soptkathon.R
-import com.junewon.soptkathon.data.service.SpangService
 import com.junewon.soptkathon.databinding.ActivityHomeBinding
-import com.junewon.soptkathon.util.binding.BindingActivity
+import com.junewon.soptkathon.presentation.profile.ProfileActivity
+import com.junewon.soptkathon.presentation.search.SearchActivity
+import com.junewon.soptkathon.util.binding.BindingActivityn.soptkathon.presentation.search.SearchActivity
+import com.junewon.soptkathon.util.extension.startActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
-    @Inject
-    lateinit var service: SpangService
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // do something..
@@ -37,5 +36,16 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         val adapter = HomeAdapter(this)
         binding.rvHomeHabit.adapter = adapter
         adapter.setRepoList(list)
+        initNavigationListener()
+    }
+
+    private fun initNavigationListener() {
+        binding.ivHomeSearch.setOnClickListener {
+            startActivity<SearchActivity>()
+        }
+
+        binding.ivHomeMypage.setOnClickListener {
+            startActivity<ProfileActivity>()
+        }
     }
 }
