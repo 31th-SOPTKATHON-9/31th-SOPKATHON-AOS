@@ -1,6 +1,10 @@
 package com.junewon.soptkathon.presentation.profile
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import androidx.lifecycle.lifecycleScope
 import com.junewon.soptkathon.R
 import com.junewon.soptkathon.data.service.SpangService
@@ -72,22 +76,45 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
         )
     )
 
-    fun fetchProgressBar() {
-        lifecycleScope.launch {
-            runCatching { service.getProgressBar() }
-                .onSuccess { }
-                .onFailure { }
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        changeTextColor()
         val adapter = BadgeAdapter(this, ::showBottomSheet)
         binding.rvProfile.setHasFixedSize(true)
         binding.rvProfile.adapter = adapter
         adapter.setBadgeList(mockBadgeList)
+        fetchProgressBar()
     }
+
+    private fun changeTextColor() {
+        val txt = binding.tvHabitCount.text
+        val spannableString = SpannableString(txt)
+        val start = 5
+        val end = 6
+        spannableString.setSpan(
+            ForegroundColorSpan(Color.parseColor("#24FF00")),
+            start,
+            end,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        binding.tvHabitCount.text = spannableString
+    }
+
+    private fun fetchProgressBar() {
+        lifecycleScope.launch {
+            runCatching { service.getProgressBar() }
+                .onSuccess {
+                    binding.progressBar.progress = it.progress
+                    binding.tvWeekPercent.text = "${it.progress}/100"
+                    val tmp = binding.tvHabitCount.text
+                    binding.tvHabitCount.text = tmp.substring(0, 5) + it.count.toString() + tmp.substring(6)
+                    changeTextColor()
+                }
+                .onFailure { }
+        }
+    }
+
     private fun showBottomSheet(position: Int) {
         BadgeBottomSheetDialog().withArgs {
             putParcelable(BADGE, mockBadgeList[position])

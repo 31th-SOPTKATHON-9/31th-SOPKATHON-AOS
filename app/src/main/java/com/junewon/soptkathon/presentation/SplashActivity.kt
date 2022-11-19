@@ -17,7 +17,7 @@ class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_
         super.onCreate(savedInstanceState)
         binding.lottieSplashImg.playAnimation()
         lifecycleScope.launch {
-            delay(3000)
+            delay(2000)
             startActivity<HomeActivity>()
             overridePendingTransition(0, 0)
             finish()
