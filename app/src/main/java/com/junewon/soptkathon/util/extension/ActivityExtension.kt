@@ -1,37 +1,9 @@
-package org.sopt.sample.util.extension
+package com.junewon.soptkathon.util.extension
 
-import androidx.annotation.IdRes
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 
-/**
- * Activity에서 Framgent replace 하는 함수
- */
-inline fun <reified T : Fragment> AppCompatActivity.navigateTo(
-    @IdRes fragmentContainerId: Int,
-    tag: String? = null,
-    action: () -> Unit = {}
-) {
-    supportFragmentManager.commit {
-        replace<T>(fragmentContainerId, tag)
-        action()
-        setReorderingAllowed(true)
-    }
-}
-
-/**
- * Fragment에서 Framgent replace 하는 함수
- */
-inline fun <reified T : Fragment> Fragment.navigateTo(
-    @IdRes fragmentContainerId: Int,
-    tag: String? = null,
-    action: () -> Unit = {}
-) {
-    parentFragmentManager.commit {
-        replace<T>(fragmentContainerId, tag)
-        action()
-        setReorderingAllowed(true)
-    }
+inline fun <reified T : Activity> AppCompatActivity.startActivity(block: Intent.() -> Unit = {}) {
+    startActivity(Intent(this, T::class.java).apply(block))
 }

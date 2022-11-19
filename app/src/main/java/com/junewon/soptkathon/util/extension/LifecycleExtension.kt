@@ -1,4 +1,4 @@
-package org.sopt.sample.util.extension
+package com.junewon.soptkathon.util.extension
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

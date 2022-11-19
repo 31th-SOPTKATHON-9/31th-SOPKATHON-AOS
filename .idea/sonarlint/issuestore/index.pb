@@ -5,17 +5,12 @@ F
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
 gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
->
-app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 z
 Japp/src/androidTest/java/com/junewon/soptkathon/ExampleInstrumentedTest.kt,5/b/5b9fe9c0b563c4546da42ab43361536f237c7020
 k
 ;app/src/test/java/com/junewon/soptkathon/ExampleUnitTest.kt,e/6/e62e8fc7a13b22c831de84f9e0dfc2bc818041b6
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 h
 8app/src/main/java/com/junewon/soptkathon/MainActivity.kt,8/2/820342be264ffd9e86a8a6653ffe687497a10512
 A
@@ -28,16 +23,6 @@ j
 :app/src/main/java/com/junewon/soptkathon/util/SnackUtil.kt,2/f/2f937c0ac375f32e9662743f64423442013c6315
 q
 Aapp/src/main/java/com/junewon/soptkathon/util/ItemDiffCallback.kt,9/f/9fe90b725b72fea15495e3ae0ba682a36e80dd7e
-p
-@app/src/main/java/com/junewon/soptkathon/util/BindingAdapters.kt,0/c/0c13fa587d04d4ad8e0ee5c5a8193d1707ce10e4
-{
-Kapp/src/main/java/com/junewon/soptkathon/util/extension/SafeLetExtension.kt,f/d/fde5107ce27b84ee75f8cc89a58fcddf72f13b11
-}
-Mapp/src/main/java/com/junewon/soptkathon/util/extension/LifecycleExtension.kt,8/f/8f66b5f429ebc33bdffbaf6c6cbb83019d97231a
-x
-Happ/src/main/java/com/junewon/soptkathon/util/extension/EnumExtension.kt,c/0/c04c45c069194933d9d3ba424708ec366271e3cb
-|
-Lapp/src/main/java/com/junewon/soptkathon/util/extension/ActivityExtension.kt,e/d/ed6008cbaa67007087389ff2fb8fa816d0791959
 x
 Happ/src/main/java/com/junewon/soptkathon/util/binding/BindingFragment.kt,8/c/8cb753468faf253cc5894edc9de09315648a34bb
 p
@@ -60,5 +45,3 @@ m
 =app/src/main/java/com/junewon/soptkathon/di/RetrofitModule.kt,f/e/fe24f2d4660b5b3cc9a503d29058a18988fd6777
 l
 <app/src/main/java/com/junewon/soptkathon/util/EnqueueUtil.kt,2/7/27a9afbc11cd85a856ac7ed69ced5af53bfc73e6
-x
-Happ/src/main/java/com/junewon/soptkathon/util/binding/BindingActivity.kt,9/f/9fd6692d2fe7e5475cc1eea0e9b53371810eed1a
