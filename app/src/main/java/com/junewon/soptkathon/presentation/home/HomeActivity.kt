@@ -16,13 +16,21 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         super.onCreate(savedInstanceState)
         // do something..
         val list = arrayListOf<HabitData>(
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33"),
-            HabitData("습관11", "습관22", "습관33")
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기"),
+            HabitData("습관 제목1", "아침 10분 독서","습관 제목2",
+                "1시간 운동하기", "습관 제목 3", "아침먹기")
+
         )
 
         val adapter = HomeAdapter(this)

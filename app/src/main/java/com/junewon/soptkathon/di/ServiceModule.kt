@@ -1,6 +1,6 @@
 package com.junewon.soptkathon.di
 
-import com.junewon.soptkathon.data.service.AuthService
+import com.junewon.soptkathon.data.service.SpangService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ object ServiceModule {
 
     @Provides
     @Singleton
-    fun providesAuthService(retrofit: Retrofit): AuthService =
+    fun providesAuthService(retrofit: Retrofit): SpangService =
         retrofit.create()
 }

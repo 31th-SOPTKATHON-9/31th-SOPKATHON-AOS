@@ -6,83 +6,213 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:fontFamily="@font"
         android:id="@+id/tv_home_habits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:fontFamily="@font/pretendard_bold"
         android:text="도독질한 습관"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/cv_home_habit1"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_home_habit1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="21dp"
         android:background="@drawable/habit_radius"
-        android:paddingVertical="27dp"
-        android:paddingStart="28dp"
-        android:text="습관1"
-        android:textSize="16sp"
+        android:paddingBottom="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_home_habits" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_habits">
 
-    <CheckBox
-        android:id="@+id/cv_home_habit2"
+        <TextView
+            android:id="@+id/tv_home_habit1title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="습관 제목"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_habit1desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="습관 설명"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_habit1title" />
+
+        <CheckBox
+            android:id="@+id/cb_home_habit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_home_habit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="21dp"
         android:background="@drawable/habit_radius"
-        android:paddingVertical="27dp"
-        android:paddingStart="28dp"
-        android:text="습관2"
-        android:textSize="16sp"
+        android:paddingBottom="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit1" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_home_habit1">
 
-    <CheckBox
-        android:id="@+id/cv_home_habit3"
+        <TextView
+            android:id="@+id/tv_home_habit2title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="습관 제목"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_habit2desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="습관 설명"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_habit2title" />
+
+        <CheckBox
+            android:id="@+id/cb_home_habit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_home_habit3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="21dp"
         android:background="@drawable/habit_radius"
-        android:paddingVertical="27dp"
-        android:paddingStart="28dp"
-        android:text="습관3"
-        android:textSize="16sp"
+        android:paddingBottom="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit2" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_home_habit2">
 
-    <TextView
-        android:id="@+id/tv_home_persontitle"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_home_habit3title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="습관 제목"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_habit3desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="습관 설명"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_habit3title" />
+
+        <CheckBox
+            android:id="@+id/cb_home_habit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="63dp"
-        android:text="인물 정보"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_home_habit3" />
-
-    <TextView
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/habit_radius"
         android:backgroundTint="#D9FFD3"
-        android:id="@+id/tv_home_personinfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/habit_radius"
-        android:paddingVertical="36dp"
-        android:paddingStart="28dp"
-        android:text="인물정보~"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_home_persontitle" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_home_habit3">
+
+        <TextView
+            android:id="@+id/tv_home_starname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="87dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="누구는 누구일까요?"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="위인 설명"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_starname" />
+
+        <ImageView
+            android:layout_width="97dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/home_star"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,9 +2,7 @@ package com.junewon.soptkathon.presentation.home
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.junewon.soptkathon.R
 import com.junewon.soptkathon.databinding.ItemHomehabitsBinding
@@ -35,9 +33,13 @@ class HomeAdapter (context : Context): RecyclerView.Adapter<HomeAdapter.HomeView
         private val binding: ItemHomehabitsBinding
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: HabitData) {
-            binding.cvHomeHabit1.setText(data.habit1)
-            binding.cvHomeHabit2.setText(data.habit2)
-            binding.cvHomeHabit3.setText(data.habit3)
+            binding.tvHomeHabit1title.text = data.habit1title
+            binding.tvHomeHabit1desc.text = data.habit1desc
+            binding.tvHomeHabit2title.text = data.habit2title
+            binding.tvHomeHabit2desc.text = data.habit2desc
+            binding.tvHomeHabit3title.text = data.habit3title
+            binding.tvHomeHabit3desc.text = data.habit3desc
+
         }
     }
 }
