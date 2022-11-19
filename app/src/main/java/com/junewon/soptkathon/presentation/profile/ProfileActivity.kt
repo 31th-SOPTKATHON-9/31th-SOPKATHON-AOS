@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.junewon.soptkathon.R
 import com.junewon.soptkathon.databinding.ActivityProfileBinding
 import com.junewon.soptkathon.util.binding.BindingActivity
+import com.junewon.soptkathon.util.withArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -69,12 +70,18 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val adapter = BadgeAdapter(this)
+        val adapter = BadgeAdapter(this, ::showBottomSheet)
         binding.rvProfile.setHasFixedSize(true)
         binding.rvProfile.adapter = adapter
         adapter.setBadgeList(mockBadgeList)
     }
-    private fun showBottomSheet() {
-        BadgeBottomSheetDialog().show(supportFragmentManager, "tag")
+    private fun showBottomSheet(position: Int) {
+        BadgeBottomSheetDialog().withArgs {
+            putParcelable(BADGE, mockBadgeList[position])
+        }.show(supportFragmentManager, "tag")
+    }
+
+    companion object {
+        const val BADGE = "Badge_Badge"
     }
 }
