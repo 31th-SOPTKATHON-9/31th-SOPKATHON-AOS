@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!--    kyobo color-->
+    <color name="grey_background">#F5F5F5</color>
     <color name="green700">#24FF00</color>
     <color name="green400">#B2FF75</color>
     <color name="green100">#E5FFD0</color>

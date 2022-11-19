@@ -8,9 +8,61 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activity_profile) {
+    private val mockBadgeList= listOf<Badge>(
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = true
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = false
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = false
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = true
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = true
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = false
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = false
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = true
+        ),
+        Badge(
+            image = R.drawable.ic_son,
+            name = "Son",
+            isLocked = true
+        ),
+
+
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // do something
+        setContentView(binding.root)
+        val adapter = BadgeAdapter(this)
+        binding.rvProfile.adapter = adapter
+        adapter.setBadgeList(mockBadgeList)
     }
     private fun showBottomSheet() {
         BadgeBottomSheetDialog().show(supportFragmentManager, "tag")
