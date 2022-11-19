@@ -12,4 +12,7 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
         super.onCreate(savedInstanceState)
         // do something
     }
+    private fun showBottomSheet() {
+        BadgeBottomSheetDialog().show(supportFragmentManager, "tag")
+    }
 }
