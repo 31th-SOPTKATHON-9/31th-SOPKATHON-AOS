@@ -74,7 +74,7 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
 
     fun fetchProgressBar() {
         lifecycleScope.launch {
-            runCatching { service.postSignIn() }
+            runCatching { service.getProgressBar() }
         }
     }
 
