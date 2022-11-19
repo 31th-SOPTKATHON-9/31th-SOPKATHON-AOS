@@ -1,14 +1,20 @@
 package com.junewon.soptkathon.presentation.profile
 
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.junewon.soptkathon.R
+import com.junewon.soptkathon.data.service.SpangService
 import com.junewon.soptkathon.databinding.ActivityProfileBinding
 import com.junewon.soptkathon.util.binding.BindingActivity
 import com.junewon.soptkathon.util.withArgs
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activity_profile) {
+    @Inject
+    lateinit var service: SpangService
     private val mockBadgeList = listOf<Badge>(
         Badge(
             image = R.drawable.ic_son,
@@ -64,8 +70,13 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
             level = "Lv.1",
             isLocked = true
         )
-
     )
+
+    fun fetchProgressBar() {
+        lifecycleScope.launch {
+            runCatching { service.postSignIn() }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
