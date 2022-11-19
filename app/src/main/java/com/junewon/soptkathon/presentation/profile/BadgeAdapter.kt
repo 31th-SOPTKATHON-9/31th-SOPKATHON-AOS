@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.junewon.soptkathon.databinding.ItemBadgeBinding
+import java.text.Bidi
 
 class BadgeAdapter(context: Context, private val showBottomSheet: (Int) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -32,6 +33,7 @@ class BadgeAdapter(context: Context, private val showBottomSheet: (Int) -> Unit)
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return BadgeViewHolder(showBottomSheet, ItemBadgeBinding.inflate(inflater, parent, false))
     }
@@ -45,7 +47,7 @@ class BadgeAdapter(context: Context, private val showBottomSheet: (Int) -> Unit)
 
     override fun getItemCount() = badgeList.size
 
-    fun setBadgeList(badgeList: List<Badge>) {
+    fun setBadgeList(badgeList: List<Badge>){
         this.badgeList = badgeList.toList()
         notifyDataSetChanged()
     }
