@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     app:behavior_hideable="true"
     android:paddingHorizontal="16dp"
+    android:paddingBottom="28dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
 
@@ -18,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.2" />
+        app:layout_constraintWidth_percent="0.22" />
 
     <TextView
         android:id="@+id/tv_badge_name"
@@ -41,7 +42,7 @@
         tools:text="Lv. 3" />
 
     <TextView
-        android:id="@+id/tv_"
+        android:id="@+id/tv_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
