@@ -139,8 +139,6 @@
             app:spanCount="3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginHorizontal="15dp"
-
             tools:listitem="@layout/item_badge" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
